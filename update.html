@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Button</title>
+  <style>
+    /* General Styling */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: linear-gradient(to right, #ffafbd, #ffc3a0);
+    }
+
+    .body {
+      text-align: center;
+      height: 400px;
+      width: 300px;
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 20px;
+      padding: 20px;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    h1 {
+      color: #ff6b6b;
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    h3 {
+      color: #34495e;
+      font-size: 18px;
+      margin-top: 15px;
+    }
+
+    button {
+      background-color: #f39c12;
+      border: none;
+      color: #fff;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 20px;
+      margin: 10px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    #button {
+      position: relative;
+      left: 200px;
+      background-color: #e74c3c;
+    }
+
+    button:hover {
+      transform: scale(1.1);
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+</head>
+<body>
+  <center>
+    <div class="body">
+      <h1>Do you Love Me?</h1>
+      <button id="yes_button">Yes</button>
+      <button id="button">No</button>
+      <h3 id="ans"></h3>
+    </div>
+  </center>
+
+  <script>
+    const button = document.querySelector("#button");
+    const ans = document.querySelector("#ans");
+    const mainbody = document.querySelector(".body");
+    const yesButton = document.querySelector("#yes_button");
+
+    button.addEventListener('mouseover', moveButton);
+    yesButton.addEventListener('click', () => ans.innerText = 'I know khushu sona, Love You Too! 😘 ');
+
+    function moveButton() {
+      const documentWidth = mainbody.offsetWidth;
+      const documentHeight = mainbody.offsetHeight;
+
+      let randomLeft = Math.random() * documentWidth + 'px';
+      let randomTop = Math.random() * documentHeight + 'px';
+      button.style.left = randomLeft;
+      button.style.top = randomTop;
+      ans.innerText = 'tu thora sa Pagal hai kya mona 😒';
+      setTimeout(() => ans.innerText = '', 1000);
+    }
+  </script>
+</body>
+</html>
